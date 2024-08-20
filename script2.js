@@ -2,6 +2,8 @@ let textoUsuario= document.getElementById("texto__usuario");
 let textoEncriptado= document.getElementById("texto__encriptado");
 let boton=document.getElementById("boton__copiar");
 boton.style.visibility='hidden';
+let boton2=document.getElementById("boton__reiniciar");
+boton2.style.visibility='hidden';
 
 
 //La letra "e" es convertida para "enter"
@@ -14,6 +16,8 @@ boton.style.visibility='hidden';
 function visible(){
     let boton=document.getElementById("boton__copiar");
             boton.style.visibility='visible';
+    let boton2=document.getElementById("boton__reiniciar");
+    boton2.style.visibility='visible';
 }
 
 function limpiarCaja() {
@@ -73,26 +77,28 @@ function btncopiar(){
 function btnreiniciar(){
     var mediaqueryList = window.matchMedia("(max-width: 48rem)");
     if(mediaqueryList.matches) {
-        document.getElementById('texto__usuario').value='';
-    document.getElementById('texto__encriptado').value='';
-    let boton=document.getElementById("boton__copiar");
-    boton.style.visibility='hidden';
-    let p=document.getElementById("p_container1");
-    let p2=document.getElementById("p_container2");
-    p.style.visibility='visible';
-    p2.style.visibility='visible';
+            document.getElementById('texto__usuario').value='';
+            document.getElementById('texto__encriptado').value='';
+            let boton=document.getElementById("boton__copiar");
+            boton.style.visibility='hidden';
+            let p=document.getElementById("p_container1");
+            let p2=document.getElementById("p_container2");
+            p.style.visibility='visible';
+            p2.style.visibility='visible';
+        
         
       }else{
-    document.getElementById('texto__usuario').value='';
-    document.getElementById('texto__encriptado').value='';
-    let quitarFondo= document.getElementById('texto__encriptado');
-    quitarFondo.style.backgroundImage="url('/assets/imagen.png')";
-    let boton=document.getElementById("boton__copiar");
-    boton.style.visibility='hidden';
-    let p=document.getElementById("p_container1");
-    let p2=document.getElementById("p_container2");
-    p.style.visibility='visible';
-    p2.style.visibility='visible';
+            document.getElementById('texto__usuario').value='';
+            document.getElementById('texto__encriptado').value='';
+            let quitarFondo= document.getElementById('texto__encriptado');
+            quitarFondo.style.backgroundImage="url('/assets/imagen.png')";
+            let boton=document.getElementById("boton__copiar");
+            boton.style.visibility='hidden';
+            let p=document.getElementById("p_container1");
+            let p2=document.getElementById("p_container2");
+            p.style.visibility='visible';
+            p2.style.visibility='visible';
+            
       }
 }
 //Boton para encriptar una palabra
@@ -111,7 +117,7 @@ function textoEncriptador(){
     
     const textoencriptado=textareaEncriptada(textoUsuario.value);
     textoEncriptado.value= textoencriptado;
-    console.log(textoEncriptado.value);
+    
     evaluarCaja(textoUsuario.value);
 
     
@@ -121,7 +127,7 @@ function textoEncriptador(){
 function textoDesencriptador(){
     const textoencriptado=desencriptarTexto(textoUsuario.value);
     textoEncriptado.value= textoencriptado;
-    console.log(textoEncriptado.value);
+    
     evaluarCaja(textoUsuario.value);
 }
 
@@ -168,7 +174,7 @@ function textareaEncriptada(texto){
         if(texto[i]== 'u'){
          array.pop();
         }  
-        console.log(array);
+        
      }
      texto = array.join('');
      return texto;  
