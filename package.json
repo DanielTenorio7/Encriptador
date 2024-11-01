@@ -1,0 +1,11 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^8.8.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
